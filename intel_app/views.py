@@ -38,7 +38,7 @@ def pay_with_wallet(request):
         print(data)
 
         sms_headers = {
-            'Authorization': 'Bearer 1046|WBwx0orkMl2eHZtB9Q9PmNLi3WMtiPPdQWTCBgmF',
+            'Authorization': 'Bearer 1343|U1X5VtnuM2ESf6SGPN7Jv3oamcehG9WU1JpTZKIF',
             'Content-Type': 'application/json'
         }
 
@@ -56,13 +56,13 @@ def pay_with_wallet(request):
                 user.wallet -= float(amount)
                 user.save()
                 receiver_message = f"Your bundle purchase has been completed successfully. {bundle}MB has been credited to you by {request.user.phone}.\nReference: {reference}\n"
-                sms_message = f"Hello @{request.user.username}. Your bundle purchase has been completed successfully. {bundle}MB has been credited to {phone_number}.\nReference: {reference}\nCurrent Wallet Balance: {user.wallet}\nThank you for using BestpayGH.\n\nBestpayGH"
+                sms_message = f"Hello @{request.user.username}. Your bundle purchase has been completed successfully. {bundle}MB has been credited to {phone_number}.\nReference: {reference}\nCurrent Wallet Balance: {user.wallet}\nThank you for using GP~WestHub.\n\nGP~WestHub"
 
                 num_without_0 = phone_number[1:]
                 print(num_without_0)
                 receiver_body = {
                     'recipient': f"233{num_without_0}",
-                    'sender_id': 'Bundle',
+                    'sender_id': 'GP~WestHub',
                     'message': receiver_message
                 }
 
@@ -71,7 +71,7 @@ def pay_with_wallet(request):
 
                 sms_body = {
                     'recipient': f"233{request.user.phone}",
-                    'sender_id': 'Bundle',
+                    'sender_id': 'GP~WestHub',
                     'message': sms_message
                 }
 
@@ -137,7 +137,7 @@ def airtel_tigo(request):
         print(data)
 
         sms_headers = {
-            'Authorization': 'Bearer 1046|WBwx0orkMl2eHZtB9Q9PmNLi3WMtiPPdQWTCBgmF',
+            'Authorization': 'Bearer 1343|U1X5VtnuM2ESf6SGPN7Jv3oamcehG9WU1JpTZKIF',
             'Content-Type': 'application/json'
         }
 
@@ -153,13 +153,13 @@ def airtel_tigo(request):
                 print(request.user.phone)
                 print("***********")
                 receiver_message = f"Your bundle purchase has been completed successfully. {bundle}MB has been credited to you by {request.user.phone}.\nReference: {payment_reference}\n"
-                sms_message = f"Hello @{request.user.username}. Your bundle purchase has been completed successfully. {bundle}MB has been credited to {phone_number}.\nReference: {payment_reference}\nThank you for using BestpayGH.\n\nBestpayGH"
+                sms_message = f"Hello @{request.user.username}. Your bundle purchase has been completed successfully. {bundle}MB has been credited to {phone_number}.\nReference: {payment_reference}\nThank you for using GP~WestHub.\n\nGP~WestHub"
 
                 num_without_0 = phone_number[1:]
                 print(num_without_0)
                 receiver_body = {
                     'recipient': f"233{num_without_0}",
-                    'sender_id': 'Bundle',
+                    'sender_id': 'GP~WestHub',
                     'message': receiver_message
                 }
 
@@ -168,7 +168,7 @@ def airtel_tigo(request):
 
                 sms_body = {
                     'recipient': f"233{request.user.phone}",
-                    'sender_id': 'Bundle',
+                    'sender_id': 'GP~WestHub',
                     'message': sms_message
                 }
 
@@ -181,11 +181,11 @@ def airtel_tigo(request):
                 transaction_to_be_updated = models.IShareBundleTransaction.objects.get(reference=payment_reference)
                 transaction_to_be_updated.transaction_status = "Failed"
                 new_transaction.save()
-                sms_message = f"Hello @{request.user.username}. Something went wrong with your transaction. Contact us for enquiries.\nBundle: {bundle}MB\nPhone Number: {phone_number}.\nReference: {payment_reference}\nThank you for using BestpayGH.\n\nBestpayGH"
+                sms_message = f"Hello @{request.user.username}. Something went wrong with your transaction. Contact us for enquiries.\nBundle: {bundle}MB\nPhone Number: {phone_number}.\nReference: {payment_reference}\nThank you for using GP~WestHub.\n\nGP~WestHub"
 
                 sms_body = {
                     'recipient': f"233{request.user.phone}",
-                    'sender_id': 'Bundle',
+                    'sender_id': 'GP~WestHub',
                     'message': sms_message
                 }
                 response = requests.request('POST', url=sms_url, params=sms_body, headers=sms_headers)
@@ -198,11 +198,11 @@ def airtel_tigo(request):
             transaction_to_be_updated = models.IShareBundleTransaction.objects.get(reference=payment_reference)
             transaction_to_be_updated.transaction_status = "Failed"
             new_transaction.save()
-            sms_message = f"Hello @{request.user.username}. Something went wrong with your transaction. Contact us for enquiries.\nBundle: {bundle}MB\nPhone Number: {phone_number}.\nReference: {payment_reference}\nThank you for using BestpayGH.\n\nBestpayGH"
+            sms_message = f"Hello @{request.user.username}. Something went wrong with your transaction. Contact us for enquiries.\nBundle: {bundle}MB\nPhone Number: {phone_number}.\nReference: {payment_reference}\nThank you for using GP~WestHub.\n\nGP~WestHub"
 
             sms_body = {
                 'recipient': f'233{request.user.phone}',
-                'sender_id': 'Bundle',
+                'sender_id': 'GP~WestHub',
                 'message': sms_message
             }
 
@@ -225,7 +225,7 @@ def mtn_pay_with_wallet(request):
         print(amount)
         print(reference)
         sms_headers = {
-            'Authorization': 'Bearer 1046|WBwx0orkMl2eHZtB9Q9PmNLi3WMtiPPdQWTCBgmF',
+            'Authorization': 'Bearer 1343|U1X5VtnuM2ESf6SGPN7Jv3oamcehG9WU1JpTZKIF',
             'Content-Type': 'application/json'
         }
 
@@ -251,7 +251,7 @@ def mtn_pay_with_wallet(request):
         admin = models.AdminInfo.objects.filter().first().phone_number
         sms_body = {
             'recipient': f"233{admin}",
-            'sender_id': 'Bundle',
+            'sender_id': 'GP~WestHub',
             'message': sms_message
         }
         response = requests.request('POST', url=sms_url, params=sms_body, headers=sms_headers)
@@ -292,7 +292,7 @@ def mtn(request):
         )
         new_mtn_transaction.save()
         sms_headers = {
-            'Authorization': 'Bearer 1046|WBwx0orkMl2eHZtB9Q9PmNLi3WMtiPPdQWTCBgmF',
+            'Authorization': 'Bearer 1343|U1X5VtnuM2ESf6SGPN7Jv3oamcehG9WU1JpTZKIF',
             'Content-Type': 'application/json'
         }
 
@@ -301,7 +301,7 @@ def mtn(request):
         admin = models.AdminInfo.objects.filter().first().phone_number
         sms_body = {
             'recipient': f"233{admin}",
-            'sender_id': 'Bundle',
+            'sender_id': 'GP~WestHub',
             'message': sms_message
         }
         response = requests.request('POST', url=sms_url, params=sms_body, headers=sms_headers)
@@ -366,7 +366,7 @@ def mark_as_sent(request, pk):
         txn.transaction_status = "Completed"
         txn.save()
         sms_headers = {
-            'Authorization': 'Bearer 1046|WBwx0orkMl2eHZtB9Q9PmNLi3WMtiPPdQWTCBgmF',
+            'Authorization': 'Bearer 1343|U1X5VtnuM2ESf6SGPN7Jv3oamcehG9WU1JpTZKIF',
             'Content-Type': 'application/json'
         }
 
@@ -376,13 +376,13 @@ def mark_as_sent(request, pk):
         user = models.CustomUser.objects.get(id=request.user.id)
         sms_body = {
             'recipient': f"233{txn.bundle_number}",
-            'sender_id': 'Bundle',
+            'sender_id': 'GP~WestHub',
             'message': sms_message
         }
 
         agent_sms_body = {
             'recipient': f"233{txn.user.phone}",
-            'sender_id': 'Bundle',
+            'sender_id': 'GP~WestHub',
             'message': agent_message
         }
         response = requests.request('POST', url=sms_url, params=sms_body, headers=sms_headers)
@@ -434,7 +434,7 @@ def topup_info(request):
         new_topup_request.save()
 
         sms_headers = {
-            'Authorization': 'Bearer 1046|WBwx0orkMl2eHZtB9Q9PmNLi3WMtiPPdQWTCBgmF',
+            'Authorization': 'Bearer 1343|U1X5VtnuM2ESf6SGPN7Jv3oamcehG9WU1JpTZKIF',
             'Content-Type': 'application/json'
         }
 
@@ -443,7 +443,7 @@ def topup_info(request):
 
         sms_body = {
             'recipient': f"233{admin}",
-            'sender_id': 'Bundle',
+            'sender_id': 'GP~WestHub',
             'message': sms_message
         }
         response = requests.request('POST', url=sms_url, params=sms_body, headers=sms_headers)
@@ -490,7 +490,7 @@ def credit_user_from_list(request, reference):
         custom_user.wallet += amount
         custom_user.save()
         sms_headers = {
-            'Authorization': 'Bearer 1046|WBwx0orkMl2eHZtB9Q9PmNLi3WMtiPPdQWTCBgmF',
+            'Authorization': 'Bearer 1343|U1X5VtnuM2ESf6SGPN7Jv3oamcehG9WU1JpTZKIF',
             'Content-Type': 'application/json'
         }
 
@@ -499,7 +499,7 @@ def credit_user_from_list(request, reference):
 
         sms_body = {
             'recipient': f"233{custom_user.phone}",
-            'sender_id': 'Bundle',
+            'sender_id': 'GP~WestHub',
             'message': sms_message
         }
         response = requests.request('POST', url=sms_url, params=sms_body, headers=sms_headers)
