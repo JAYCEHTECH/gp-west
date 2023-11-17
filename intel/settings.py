@@ -26,11 +26,11 @@ SECRET_KEY = config("SECRET_KEY")
 # SECRET_KEY = "DGFYUGEUGFEFE"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    'bestpay-4rw6h.ondigitalocean.app',
-    'www.mtndata.shop'
+    'gp-west-obz3a.ondigitalocean.app',
+    'www.gpwesthub.shop'
 ]
 
 
@@ -50,14 +50,14 @@ INSTALLED_APPS = [
 
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
-    "site_title": "BestPayGH",
-    "site_header": "BestPayGH",
+    "site_title": "GP~West",
+    "site_header": "GP~West",
     # "site_logo": "img/site/bestPay Logo.png",
     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_brand": "BestPayGH",
-    "copyright": "BestPayGH",
+    "site_brand": "GP~West",
+    "copyright": "GP~West",
     # "login_logo": "img/site/bp.png",
-    "welcome_sign": "Welcome to the BestPayGH Admin",
+    "welcome_sign": "Welcome to the GP~West Admin",
     "custom_css": 'css/admin.css',
     "user_avatar": 'user',
 }
